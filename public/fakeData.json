@@ -1,0 +1,56 @@
+[
+  {
+    "recipe_id": 1,
+    "recipe_name": "Chicken Stir-Fry",
+    "recipe_image": "https://www.allrecipes.com/thmb/wbWfb-cXCq1yd6NlpJR7z5Nr1Wc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/240708-broccoli-and-chicken-stir-fry-DDMFS-4x3-27886203cb2744f99d15247496019942.jpg",
+    "short_description": "A delicious and easy-to-make chicken stir-fry",
+    "ingredients": ["550 g chicken", "120 ml soy sauce", "200 g basil leaf", "400 g mushroom"],
+    "preparing_time": "30 min",
+    "calories": "320 calories"
+  },
+  {
+    "recipe_id": 2,
+    "recipe_name": "Vegetable Pasta",
+    "recipe_image": "https://www.budgetbytes.com/wp-content/uploads/2021/07/Quick-Veggie-Pasta-fork.jpg",
+    "short_description": "A tasty and healthy vegetable pasta dish",
+    "ingredients": ["300 g pasta", "1 onion", "2 bell peppers", "200 g cherry tomatoes"],
+    "preparing_time": "25 min",
+    "calories": "250 calories"
+  },
+  {
+    "recipe_id": 3,
+    "recipe_name": "Grilled Salmon",
+    "recipe_image": "https://www.simplyrecipes.com/thmb/dHQOaU9YEDErpq03ic1CAg5pZN8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2013__06__grilled-salmon-dill-butter-horiz-640-887464d180534e0e9b0e009c50e96e23.jpg",
+    "short_description": "Juicy grilled salmon with lemon and herbs",
+    "ingredients": ["4 salmon fillets", "2 lemons", "2 tbsp olive oil", "Salt and pepper to taste"],
+    "preparing_time": "20 min",
+    "calories": "280 calories"
+  },
+  {
+    "recipe_id": 4,
+    "recipe_name": "Caprese Salad",
+    "recipe_image": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2019/07/Caprese-Salad-main-1.jpg",
+    "short_description": "A refreshing salad with tomatoes, mozzarella, and basil",
+    "ingredients": ["4 tomatoes", "200 g mozzarella cheese", "1 bunch fresh basil", "2 tbsp balsamic vinegar"],
+    "preparing_time": "15 min",
+    "calories": "180 calories"
+  },
+  {
+    "recipe_id": 5,
+    "recipe_name": "Beef Tacos",
+    "recipe_image": "https://www.onceuponachef.com/images/2023/08/Beef-Tacos.jpg",
+    "short_description": "Tasty beef tacos with salsa and guacamole",
+    "ingredients": ["400 g ground beef", "8 taco shells", "1 onion", "2 tomatoes", "1 avocado"],
+    "preparing_time": "35 min",
+    "calories": "350 calories"
+  },
+  {
+    "recipe_id": 6,
+    "recipe_name": "Vegetarian Curry",
+    "recipe_image": "https://images.immediate.co.uk/production/volatile/sites/30/2022/06/Courgette-curry-c295fa0.jpg?resize=768,574",
+    "short_description": "Spicy and flavorful vegetarian curry with chickpeas and vegetables",
+    "ingredients": ["1 can chickpeas", "2 potatoes", "1 carrot", "1 onion", "200 ml coconut milk"],
+    "preparing_time": "40 min",
+    "calories": "300 calories"
+  }
+]

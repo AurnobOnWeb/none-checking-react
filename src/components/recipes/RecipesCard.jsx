@@ -40,10 +40,10 @@ const RecipesCard = ({ recipe, handleWantToCook }) => {
       <div className="flex gap-6">
         <div className="flex items-center gap-2">
           <IcRoundWatchLater></IcRoundWatchLater>
-          {preparing_time}
+          {preparing_time} min
         </div>
         <div className="flex items-center">
-          <LetsIconsCalories></LetsIconsCalories> {calories}
+          <LetsIconsCalories></LetsIconsCalories> {calories} calories
         </div>
       </div>
       <div className="mt-4">

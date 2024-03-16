@@ -9,6 +9,7 @@ const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [wantToCook, setWantToCook] = useState([]);
   const [wantToCookData, setWantToCookData] = useState([]);
+  const [currentlyCooking, setCurrentlyCooking] = useState([]);
 
   const notify = () =>
     toast.error("You Have Already wanted to Cook This item!");
@@ -28,19 +29,53 @@ const Recipes = () => {
         if (recipe) {
           const newCookData = [...wantToCookData, recipe];
           setWantToCookData(newCookData);
+          setWantToCook([]);
         }
       }
     }
   }, [wantToCook]);
-  console.log(wantToCookData);
+
   const handleWantToCook = (id) => {
-    if (!wantToCook.includes(id)) {
+    const cooked = wantToCookData.find((data) => data.recipe_id == id);
+    const cooked2 = currentlyCooking.find((data) => data.recipe_id == id);
+    if (!cooked && !cooked2) {
       const newCook = [...wantToCook, id];
       setWantToCook(newCook);
     } else {
       notify();
     }
   };
+  console.log(wantToCookData);
+
+  const handlePreparingRecipes = (data) => {
+    const cooked = currentlyCooking.find(
+      (newData) => newData.recipe_id == data.recipe_id
+    );
+    if (!cooked) {
+      const newCook = [...currentlyCooking, data];
+      setCurrentlyCooking(newCook);
+
+      // const wantToCookDataId = wantToCookData.find(
+      //   (data) => data.recipe_id == data.recipe_id
+      // );
+
+      setWantToCookData(
+        wantToCookData.filter(
+          (wannaCook) => wannaCook.recipe_id != data.recipe_id
+        )
+      );
+    } else {
+      notify();
+    }
+  };
+  const totalCalories = currentlyCooking.reduce((total, item) => {
+    return total + item.calories;
+  }, 0);
+
+  const totalTime = currentlyCooking.reduce((total, item) => {
+    return total + item.preparing_time;
+  }, 0);
+
   return (
     <>
       <Toaster position="top-right" reverseOrder={false} backgr />
@@ -87,20 +122,49 @@ const Recipes = () => {
                         <InfoTable
                           key={recipeData.recipe_id}
                           recipeData={recipeData}
+                          handlePreparingRecipes={handlePreparingRecipes}
                         />
                       ))
                     ) : (
-                      <p>No recipes to display</p>
+                      <tr>
+                        <td>No recipes to display</td>
+                      </tr>
                     )}
                   </tbody>
                 </table>
               </div>
 
-              <InfoHeader title={"Currently cooking: 02"}></InfoHeader>
-              <InfoTable></InfoTable>
+              <InfoHeader
+                title={"Want To Cook Data: " + currentlyCooking.length}
+              ></InfoHeader>
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Time</th>
+                    <th>Calories</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody className="">
+                  {currentlyCooking.length > 0 ? (
+                    currentlyCooking.map((recipeData) => (
+                      <InfoTable
+                        key={recipeData.recipe_id}
+                        recipeData={recipeData}
+                      />
+                    ))
+                  ) : (
+                    <tr>
+                      <td>No recipes to display</td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
               <div className="flex justify-between px-4 mb-8">
-                <h1>Total Time = 45 minutes</h1>
-                <h1> Total Calories = = 1050 calories</h1>
+                <h1>Total Time = {totalTime} minutes</h1>
+                <h1> Total Calories = {totalCalories} calories</h1>
               </div>
             </div>
           </div>
